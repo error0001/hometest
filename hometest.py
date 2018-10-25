@@ -62,6 +62,27 @@ def t5(value_list):
     yield i   #навроде return , но возвращает генератор
     print(i)
 
+#6 
+def spam():
+  try:
+    print('1')
+    b = {}
+    print(b['2']) # !!!
+
+  except KeyError:
+    print(3)
+    raise Exception # прерывает штатный поток исключений
+
+  except Exception:
+    print(4)
+
+  finally:
+    print(5)
+
+#7
+def t7():
+  result = [z() for z in (lambda: x ** 2 for x in range(10) if x % 2 == 0)]
+
 #**main**************************************************************************
 if __name__ == '__main__':
   #t1()
@@ -77,6 +98,7 @@ if __name__ == '__main__':
   print(child2.get_a()) # 15      # C++ std::cout << child2->get_a() << std::endl;
   '''
   #5####################
+  '''
   try:
     gen = t5([1,2])
     print("aaa")
@@ -88,4 +110,13 @@ if __name__ == '__main__':
     next(gen)
   except StopIteration:
     pass
+  '''
+  ######################
+  #6####################
+  '''
+  try:
+    spam()
+  except Exception:
+    print(6)
+  '''
   ######################
