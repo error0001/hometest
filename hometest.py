@@ -76,5 +76,16 @@ if __name__ == '__main__':
   child2.set_a(child1.get_a())    # C++ child1->get_a(child1->get_a());
   print(child2.get_a()) # 15      # C++ std::cout << child2->get_a() << std::endl;
   '''
-  ll = [1,2,3,4,5,6]
-  t5(ll)
+  #5####################
+  try:
+    gen = t5([1,2])
+    print("aaa")
+    # с помощью next перебираем 
+    next(gen) # дает возможность работы с итератором, в нашем случае итератор является объект gen
+    print("bbb")
+    next(gen)
+    print("ccc")
+    next(gen)
+  except StopIteration:
+    pass
+  ######################
