@@ -1,5 +1,5 @@
 import os
-
+import math
 #1
 def t1():
   a = [1,2,3]   # C++ int a[3] = { 1,2,3 };
@@ -81,7 +81,19 @@ def spam():
 
 #7
 def t7():
+  # lambda - это анонимная или несвязанная функция, ограниченная
+  '''
+  пример как функция
+  def sqroot(x):
+    """
+    Находим квадратный корень.
+    """
+    return math.sqrt(x)
+  пример с lambda
+  square_rt = lambda x: math.sqrt(x)
+  '''
   result = [z() for z in (lambda: x ** 2 for x in range(10) if x % 2 == 0)]
+  print(result)
 
 #**main**************************************************************************
 if __name__ == '__main__':
