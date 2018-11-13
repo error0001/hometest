@@ -114,7 +114,7 @@ def season(in_num):
   else:
     return "error in_num"
 
-def season(in_num):
+def season1(in_num):
   dict_seas = {}
   if in_num != None and in_num != 0 and in_num < 13:
     dict_seas = {
