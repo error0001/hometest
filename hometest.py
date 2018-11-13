@@ -95,8 +95,51 @@ def t7():
   result = [z() for z in (lambda: x ** 2 for x in range(10) if x % 2 == 0)]
   print(result)
 
+"""
+1. вводим номер месяца, получаем время года
+1.1. нужны все месяцы 
+(названия и номера, хотя задача требует только номер)
+1.2. нужны времена года
+"""
+def season(in_num):
+  dict_seas = {}
+  if in_num != None and in_num != 0 and in_num < 13:
+    dict_seas = {
+      1:'winter', 2:'winter', 3:'winter',
+      4:'spring', 5:'spring', 6:'spring',
+      7:'summer', 8:'summer', 9:'summer',
+      10:'autumn',11:'autumn',12:'autumn'
+    }
+    return dict_seas[in_num]
+  else:
+    return "error in_num"
+
+def season(in_num):
+  dict_seas = {}
+  if in_num != None and in_num != 0 and in_num < 13:
+    dict_seas = {
+      1:'winter', 2:'winter', 3:'winter',
+      4:'spring', 5:'spring', 6:'spring',
+      7:'summer', 8:'summer', 9:'summer',
+      10:'autumn',11:'autumn',12:'autumn'
+    }
+    return dict_seas[in_num]
+  else:
+    return "error in_num"
+
 #**main**************************************************************************
 if __name__ == '__main__':
+  try:
+    print("start app")
+    print(season(int(input("Print a number: "))))
+  except OSError as oser:
+    print("Error: ", oser)
+  except TypeError as typer:
+    print("Error: ", typer)
+  finally:
+    print("end app")
+
+
   #t1()
   #t2()
   #t22()
